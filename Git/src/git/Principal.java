@@ -70,6 +70,7 @@ public class Principal {
 		Scanner sc =new Scanner(System.in);
 		
 		Ingreso ingresos=new Ingreso(user.getNomina());
+
 		
 		ingresos.rellenar(sc);
 		ingresos.mostrardatos();
