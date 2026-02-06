@@ -2,22 +2,14 @@ package git;
 import java.util.*;
 public class Ingreso {
 
-	private double nomina;
+	private double nominabruto;
 	private ArrayList<Extra> extras;
 	private double totalextras;
 	private double total;
 
-	public Ingreso() {
+	public Ingreso(double nominabruto) {
+		this.nominabruto=nominabruto;
 		extras=new ArrayList<>();
-	}
-
-	public void setNomina(Scanner sc) {
-		String x="";
-		do {
-		System.out.println("Introduce tus ingresos mensuales base: ");
-		x=sc.nextLine();
-		}while(!decimales(x));
-		nomina=Double.parseDouble(x);
 	}
 
 	public void ingresototal() {
@@ -27,7 +19,8 @@ public class Ingreso {
 		while(iterador.hasNext()) {
 			totalextras+= iterador.next().getDinero();
 		}
-		total+=(nomina*0.79)+totalextras;
+		total+=(nominabruto*0.79)+totalextras;
+		System.out.println("Tu nomina en bruto es "+ nominabruto);
 		System.out.println("Los ingresos totales son "+total+"€");
 	}
 	

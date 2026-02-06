@@ -5,9 +5,8 @@ public class Principal {
 	public static void main(String[] args) {
 		Scanner sc =new Scanner(System.in);
 		
-		Ingreso ingresos=new Ingreso();
+		Ingreso ingresos=new Ingreso(15000);
 		
-		ingresos.setNomina(sc);
 		ingresos.rellenar(sc);
 		ingresos.mostrardatos();
 	}
